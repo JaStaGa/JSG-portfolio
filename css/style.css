@@ -1,0 +1,26 @@
+/* --- css/style.css --- */
+
+/* Reset & base */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Roboto', sans-serif; background:#F5F5F5; color:#2C3E50; line-height:1.6; }
+
+/* Container */
+.container { width:90%; max-width:1000px; margin:0 auto; }
+
+/* Navbar */
+.navbar { background:#2C3E50; }
+.navbar .container { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
+.logo { color:#1ABC9C; font-family:'Montserrat', sans-serif; font-size:1.5rem; text-decoration:none; }
+.nav-links { list-style:none; display:flex; gap:1rem; }
+.nav-links a { color:#F5F5F5; text-decoration:none; font-weight:500; }
+
+/* Sections */
+.section { padding:4rem 0; }
+.home { background:#1ABC9C; color:#F5F5F5; text-align:center; padding:6rem 0; }
+.home .tagline { font-size:1.2rem; margin-top:0.5rem; }
+
+/* Headings */
+h1, h2 { font-family:'Montserrat', sans-serif; margin-bottom:1rem; }
+
+/* Links */
+a:hover { opacity:0.8; transition:opacity 0.3s; }

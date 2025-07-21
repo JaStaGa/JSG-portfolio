@@ -46,3 +46,24 @@ h1, h2 { font-family:'Montserrat', sans-serif; margin-bottom:1rem; }
 
 /* Links */
 a:hover { opacity:0.8; transition:opacity 0.3s; }
+
+/* ——— 90s Boot Screen Overlay ——— */
+#boot-screen {
+  position: fixed;
+  inset: 0;                /* top:0; right:0; bottom:0; left:0; */
+  background: #000;
+  display: flex;
+  align-items: flex-start; /* start typing at the top */
+  justify-content: center;
+  padding: 2rem;
+  z-index: 9999;
+  opacity: 1;
+}
+
+#boot-text {
+  color: #0f0;             /* classic green text */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1rem;
+  line-height: 1.4;
+  white-space: pre-wrap;   /* preserve line breaks */
+}

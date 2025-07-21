@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jaylin Starlin‑Ganaway | Portfolio</title>
+    <title>Jaylin Starlin-Ganaway | Portfolio</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap"
@@ -15,11 +15,15 @@
 </head>
 
 <body>
+    <div id="boot-screen">
+        <pre id="boot-text"></pre>
+    </div>
+
     <!-- Navigation -->
     <header>
         <nav class="navbar">
             <div class="container">
-                <a href="#home" class="logo">Jaylin Starlin‑Ganaway</a>
+                <a href="#home" class="logo">Jaylin Starlin-Ganaway</a>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#experience">Experience</a></li>
@@ -35,7 +39,7 @@
     <!-- Home / Hero Section -->
     <section id="home" class="home">
         <div class="container">
-            <h1>Jaylin Starlin‑Ganaway</h1>
+            <h1>Jaylin Starlin-Ganaway</h1>
             <p class="tagline">Computer Science Student | Aspiring FinTech Engineer</p>
         </div>
     </section>
@@ -57,7 +61,7 @@
             <ul class="experience-list">
                 <li>
                     <h3>Bank Teller</h3>
-                    <p class="company">Eastern Bank, Allston, MA <span class="date">May 2023 – March 2024</span></p>
+                    <p class="company">Eastern Bank, Allston, MA <span class="date">May 2023 - March 2024</span></p>
                     <ul>
                         <li>Processed customer transactions, including cash deposits, withdrawals, and check cashing.
                         </li>
@@ -66,7 +70,7 @@
                 </li>
                 <li>
                     <h3>Member Service Coordinator</h3>
-                    <p class="company">New York Sports Club, Allston, MA <span class="date">April 2023 – June
+                    <p class="company">New York Sports Club, Allston, MA <span class="date">April 2023 - June
                             2024</span></p>
                     <ul>
                         <li>Managed member account inquiries using ABC Fitness software.</li>
@@ -75,7 +79,7 @@
                 </li>
                 <li>
                     <h3>Member Service Coordinator</h3>
-                    <p class="company">MIT Recreation, Boston, MA <span class="date">October 2021 – February 2023</span>
+                    <p class="company">MIT Recreation, Boston, MA <span class="date">October 2021 - February 2023</span>
                     </p>
                     <ul>
                         <li>Utilized Club Automation Software to help members manage their memberships.</li>
@@ -85,7 +89,7 @@
                 <li>
                     <h3>Teacher</h3>
                     <p class="company">International STEM Education Association, Torrance, CA <span class="date">January
-                            2021 – September 2021</span></p>
+                            2021 - September 2021</span></p>
                     <ul>
                         <li>Taught programming (Python, Java) to students of various ages.</li>
                         <li>Prepared and adapted lessons for different class sizes and topics.</li>
@@ -94,7 +98,7 @@
                 </li>
                 <li>
                     <h3>Office Assistant</h3>
-                    <p class="company">United Activities Unlimited, Staten Island, NY <span class="date">October 2017 –
+                    <p class="company">United Activities Unlimited, Staten Island, NY <span class="date">October 2017 -
                             March 2019</span></p>
                     <ul>
                         <li>Assisted in designing identification cards for the Work Learn Grow Program.</li>
@@ -113,12 +117,12 @@
             <ul class="education-list">
                 <li>
                     <h3>Computer Science, B.A.</h3>
-                    <p class="school">Boston University, Boston, MA <span class="date">September 2019 – December 2025
+                    <p class="school">Boston University, Boston, MA <span class="date">September 2019 - December 2025
                             (Expected)</span></p>
                 </li>
                 <li>
                     <h3>High School Diploma</h3>
-                    <p class="school">Susan E. Wagner High School, Staten Island, NY <span class="date">September 2015 –
+                    <p class="school">Susan E. Wagner High School, Staten Island, NY <span class="date">September 2015 -
                             May 2019</span></p>
                 </li>
             </ul>
@@ -173,6 +177,49 @@
                     target="_blank">linkedin.com/in/jaylinstarlin-ganaway</a></p>
         </div>
     </section>
+
+    <!-- Script for 90's style loading screen -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const lines = [
+                "Loading Jaylin Starlin Ganaway's portfolio...",
+                "",
+                "",
+                "Gaining work experience modules...",
+                "Initializing education history...",
+                "Compiling skills and projects...",
+                "",
+                "",
+                "Boot sequence complete. Welcome!"
+            ];
+            const textEl = document.getElementById("boot-text");
+            const bootScreen = document.getElementById("boot-screen");
+
+            let lineIndex = 0, charIndex = 0;
+
+            function typeNextChar() {
+                if (lineIndex >= lines.length) {
+                    // all done → fade out
+                    bootScreen.style.transition = "opacity 0.8s ease";
+                    bootScreen.style.opacity = 0;
+                    setTimeout(() => bootScreen.remove(), 900);
+                    return;
+                }
+                const current = lines[lineIndex];
+                if (charIndex < current.length) {
+                    textEl.textContent += current[charIndex++];
+                    setTimeout(typeNextChar, 25);  // 50 ms per character
+                } else {
+                    textEl.textContent += "\n";    // move to next line
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeNextChar, 400); // 400 ms pause between lines
+                }
+            }
+
+            typeNextChar();
+        });
+    </script>
 
 </body>
 

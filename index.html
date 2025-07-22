@@ -190,7 +190,8 @@
                 "Compiling skills and projects...",
                 "",
                 "",
-                "Boot sequence complete. Welcome!"
+                "Boot sequence complete. Welcome!",
+                ""
             ];
             const textEl = document.getElementById("boot-text");
             const bootScreen = document.getElementById("boot-screen");
@@ -208,12 +209,12 @@
                 const current = lines[lineIndex];
                 if (charIndex < current.length) {
                     textEl.textContent += current[charIndex++];
-                    setTimeout(typeNextChar, 25);  // 50 ms per character
+                    setTimeout(typeNextChar, 10);  // 50 ms per character
                 } else {
                     textEl.textContent += "\n";    // move to next line
                     lineIndex++;
                     charIndex = 0;
-                    setTimeout(typeNextChar, 400); // 400 ms pause between lines
+                    setTimeout(typeNextChar, 200); // 400 ms pause between lines
                 }
             }
 

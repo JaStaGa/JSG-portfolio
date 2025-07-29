@@ -54,6 +54,36 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3><a href="https://jsg-websites.onrender.com/" target="_blank">Multi-Site Launcher</a></h3>
+                    <p>Django-powered hub for accessing my personal web projects. Hosted on Render with dynamic routing
+                        and Bootstrap styling.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Android App</h3>
+                    <p>Utilized Android Studio to create a mobile application allowing users to visit landmarks in
+                        Boston and play mini-games to earn virtual rewards.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Reliable Transport Protocol</h3>
+                    <p>Developed Selective Repeat and Go-Back-N data transfer protocols in a simulated environment to
+                        ensure reliable packet delivery.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Language Compiler</h3>
+                    <p>Engineered a compiler to translate a high-level OCaml-like language into a stack-oriented format,
+                        implementing syntax parsing and expression evaluation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="container">
@@ -144,29 +174,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>Android App</h3>
-                    <p>Utilized Android Studio to create a mobile application allowing users to visit landmarks in
-                        Boston and play mini-games to earn virtual rewards.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Reliable Transport Protocol</h3>
-                    <p>Developed Selective Repeat and Go-Back-N data transfer protocols in a simulated environment to
-                        ensure reliable packet delivery.</p>
-                </div>
-                <div class="project-card">
-                    <h3>Language Compiler</h3>
-                    <p>Engineered a compiler to translate a high-level OCaml-like language into a stack-oriented format,
-                        implementing syntax parsing and expression evaluation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
@@ -190,6 +197,7 @@
                 "Compiling skills and projects...",
                 "",
                 "",
+                
                 "Boot sequence complete. Welcome!",
                 ""
             ];
@@ -209,12 +217,12 @@
                 const current = lines[lineIndex];
                 if (charIndex < current.length) {
                     textEl.textContent += current[charIndex++];
-                    setTimeout(typeNextChar, 10);  // 50 ms per character
+                    setTimeout(typeNextChar, 1);  // ms per character
                 } else {
                     textEl.textContent += "\n";    // move to next line
                     lineIndex++;
                     charIndex = 0;
-                    setTimeout(typeNextChar, 200); // 400 ms pause between lines
+                    setTimeout(typeNextChar, 50); // ms pause between lines
                 }
             }
 

@@ -60,9 +60,10 @@ html {
 }
 
 /* Sections */
-.section {
-  padding: 2rem 0;
+.section:not(.home) {
+  padding: 5rem 0 2rem;
 }
+
 
 .home {
   background: #1ABC9C;
@@ -194,7 +195,7 @@ a:hover {
 }
 
 /* Mobile tweaks (max-width: 600px) */
-@media (max-width: 600px) {
+@media (max-width: 750px) {
 
   /* 1) Stack nav into two rows and center it */
   .navbar .container {

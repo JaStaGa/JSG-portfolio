@@ -28,6 +28,9 @@ html {
 /* Navbar */
 .navbar {
   background: #2C3E50;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar .container {
@@ -283,4 +286,24 @@ body.dark a {
 body.dark a:hover {
   opacity: 1;
   text-decoration: underline;
+}
+
+.section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }

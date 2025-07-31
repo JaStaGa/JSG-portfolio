@@ -23,13 +23,18 @@
     <header>
         <nav class="navbar">
             <div class="container">
+                <button id="toggle-dark"
+                    style="background:none;border:1px solid #ccc;padding:0.4rem 0.8rem;border-radius:6px;color:#fff;cursor:pointer;">
+                    Dark Mode
+                </button>
+
                 <a href="#home" class="logo">Jaylin Starlin-Ganaway</a>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#education">Education</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -83,6 +88,20 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>SQL</li>
+                <li>Python</li>
+                <li>Java / Kotlin</li>
+                <li>C++</li>
+                <li>OCaml</li>
+                <li>HTML / CSS</li>
+            </ul>
+        </div>
+    </section>
 
     <!-- Experience Section -->
     <section id="experience" class="section">
@@ -159,21 +178,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>SQL</li>
-                <li>Python</li>
-                <li>Java / Kotlin</li>
-                <li>C++</li>
-                <li>OCaml</li>
-                <li>HTML / CSS</li>
-            </ul>
-        </div>
-    </section>
-
 
     <!-- Contact Section -->
     <section id="contact" class="section">
@@ -197,7 +201,7 @@
                 "Compiling skills and projects...",
                 "",
                 "",
-                
+
                 "Boot sequence complete. Welcome!",
                 ""
             ];
@@ -227,6 +231,28 @@
             }
 
             typeNextChar();
+        });
+    </script>
+
+    <script>
+        const toggle = document.getElementById("toggle-dark");
+        const body = document.body;
+
+        // Save preference in localStorage
+        if (localStorage.getItem("darkMode") === "enabled") {
+            body.classList.add("dark");
+            toggle.textContent = "Light Mode";
+        }
+
+        toggle.addEventListener("click", () => {
+            body.classList.toggle("dark");
+            if (body.classList.contains("dark")) {
+                localStorage.setItem("darkMode", "enabled");
+                toggle.textContent = "Light Mode";
+            } else {
+                localStorage.setItem("darkMode", "disabled");
+                toggle.textContent = "Dark Mode";
+            }
         });
     </script>
 

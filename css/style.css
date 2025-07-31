@@ -1,59 +1,179 @@
 /* --- css/style.css --- */
 
 /* Reset & base */
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Roboto', sans-serif; background:#F5F5F5; color:#2C3E50; line-height:1.6; }
-html { scroll-behavior: smooth; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #F5F5F5;
+  color: #2C3E50;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* Container */
-.container { width:90%; max-width:1000px; margin:0 auto; }
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
 /* Navbar */
-.navbar { background:#2C3E50; }
-.navbar .container { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
-.logo { color:#1ABC9C; font-family:'Montserrat', sans-serif; font-size:1.5rem; text-decoration:none; }
-.nav-links { list-style:none; display:flex; gap:1rem; }
-.nav-links a { color:#F5F5F5; text-decoration:none; font-weight:500; }
+.navbar {
+  background: #2C3E50;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  color: #1ABC9C;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: #F5F5F5;
+  text-decoration: none;
+  font-weight: 500;
+}
 
 /* Sections */
-.section { padding:2rem 0; }
-.home { background:#1ABC9C; color:#F5F5F5; text-align:center; padding:6rem 0; }
-.home .tagline { font-size:1.2rem; margin-top:0.5rem; }
+.section {
+  padding: 2rem 0;
+}
+
+.home {
+  background: #1ABC9C;
+  color: #F5F5F5;
+  text-align: center;
+  padding: 6rem 0;
+}
+
+.home .tagline {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
 
 /* Headings */
-h1, h2 { font-family:'Montserrat', sans-serif; margin-bottom:1rem; }
+h1,
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 1rem;
+}
 
 /* Experience List */
-.experience-list { list-style:none; }
-.experience-list > li { margin-bottom:2rem; }
-.experience-list h3 { font-size:1.25rem; margin-bottom:0.5rem; }
-.company { font-style:italic; }
-.date { float:right; font-style:normal; }
-.experience-list ul { margin-top:0.5rem; list-style:disc; padding-left:1.5rem; }
+.experience-list {
+  list-style: none;
+}
+
+.experience-list>li {
+  margin-bottom: 2rem;
+}
+
+.experience-list h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.company {
+  font-style: italic;
+}
+
+.date {
+  float: right;
+  font-style: normal;
+}
+
+.experience-list ul {
+  margin-top: 0.5rem;
+  list-style: disc;
+  padding-left: 1.5rem;
+}
 
 /* Education List */
-.education-list { list-style:none; }
-.education-list li { margin-bottom:1.5rem; }
-.education-list h3 { font-size:1.2rem; margin-bottom:0.3rem; }
-.school { font-style:italic; }
+.education-list {
+  list-style: none;
+}
+
+.education-list li {
+  margin-bottom: 1.5rem;
+}
+
+.education-list h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.school {
+  font-style: italic;
+}
 
 /* Skills List */
-.skills-list { display:flex; flex-wrap:wrap; gap:0.5rem; list-style:none; margin-top:1rem; }
-.skills-list li { background:#1ABC9C; color:#F5F5F5; padding:0.5rem 1rem; border-radius:20px; font-size:0.9rem; }
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.skills-list li {
+  background: #1ABC9C;
+  color: #F5F5F5;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
 
 /* Projects Grid */
-.projects-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(250px,1fr)); gap:1rem; margin-top:1rem; }
-.project-card { background:#FFFFFF; padding:1rem; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.project-card {
+  background: #FFFFFF;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
 /* Links */
-a:hover { opacity:0.8; transition:opacity 0.3s; }
+a:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
 
 /* ——— 90s Boot Screen Overlay ——— */
 #boot-screen {
   position: fixed;
-  inset: 0;                /* top:0; right:0; bottom:0; left:0; */
+  inset: 0;
+  /* top:0; right:0; bottom:0; left:0; */
   background: #000;
   display: flex;
-  align-items: flex-start; /* start typing at the top */
+  align-items: flex-start;
+  /* start typing at the top */
   justify-content: center;
   padding: 2rem;
   z-index: 9999;
@@ -61,25 +181,30 @@ a:hover { opacity:0.8; transition:opacity 0.3s; }
 }
 
 #boot-text {
-  color: #0f0;             /* classic green text */
+  color: #0f0;
+  /* classic green text */
   font-family: "Courier New", Courier, monospace;
   font-size: 1rem;
   line-height: 1.4;
-  white-space: pre-wrap;   /* preserve line breaks */
+  white-space: pre-wrap;
+  /* preserve line breaks */
 }
 
 /* Mobile tweaks (max-width: 600px) */
 @media (max-width: 600px) {
+
   /* 1) Stack nav into two rows and center it */
   .navbar .container {
     flex-direction: column;
     align-items: center;
   }
+
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 0.5rem;
   }
+
   .nav-links li {
     margin: 0.25rem 0.5rem;
   }
@@ -88,6 +213,7 @@ a:hover { opacity:0.8; transition:opacity 0.3s; }
   .logo {
     font-size: 1.25rem;
   }
+
   .nav-links a {
     font-size: 0.9rem;
   }
@@ -97,6 +223,7 @@ a:hover { opacity:0.8; transition:opacity 0.3s; }
     font-size: 1.75rem;
     text-align: center;
   }
+
   .tagline {
     font-size: 1rem;
     text-align: center;
@@ -114,7 +241,46 @@ a:hover { opacity:0.8; transition:opacity 0.3s; }
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
+
   .skills-list {
     justify-content: center;
   }
+}
+
+body.dark {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+body.dark .navbar {
+  background: #1e1e1e;
+}
+
+body.dark .nav-links a {
+  color: #e0e0e0;
+}
+
+body.dark .home {
+  background: #333;
+  color: #f0f0f0;
+}
+
+body.dark .skills-list li {
+  background: #444;
+  color: #f0f0f0;
+}
+
+body.dark .project-card {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+body.dark a {
+  color: #90caf9;
+}
+
+body.dark a:hover {
+  opacity: 1;
+  text-decoration: underline;
 }

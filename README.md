@@ -1,4 +1,4 @@
-```markdown
+
 # JSG Portfolio
 
 This is my personal portfolio site. It is where I bring together my projects, skills, and experience in one place, but I also wanted it to be something that feels alive when you visit. Everything you see here was built with a mix of clean design and a few special effects to make it stand out.

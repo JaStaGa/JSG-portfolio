@@ -109,11 +109,11 @@ body:not(.dark) .nav-links a {
 body:not(.dark) .btn.ghost {
   color: var(--brand);
   border-color: var(--brand);
-  background: transparent;
+  background: transparent
 }
 
 body:not(.dark) .btn.ghost:hover {
-  background: rgba(26, 188, 156, 0.1);
+  background: rgba(26, 188, 156, .1)
 }
 
 .nav-actions {

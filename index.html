@@ -9,9 +9,16 @@
     <meta property="og:title" content="Jaylin Starlin‑Ganaway | Portfolio" />
     <meta property="og:description" content="Developer & CS Student @ Boston University" />
     <meta property="og:type" content="website" />
+    <link rel="icon" href="img/favicon.png">
+    <meta property="og:image" content="img/jsg-pfp.png">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap">
+    </noscript>
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap"
-        rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -236,8 +243,9 @@
             body.classList.add("dark");
             toggle.setAttribute("aria-pressed", "true");
             toggle.textContent = "Light";
+        } else {
+            toggle.textContent = "Dark";
         }
-
 
         toggle.addEventListener("click", () => {
             body.classList.toggle("dark");

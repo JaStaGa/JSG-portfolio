@@ -2,41 +2,49 @@
 <html lang="en">
 
 <head>
+    <!-- set character encoding and responsive viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jaylin Starlin‑Ganaway | Portfolio</title>
+    <!-- page title and basic seo -->
+    <title>Jaylin Starlin-Ganaway | Portfolio</title>
     <meta name="description" content="Developer & CS Student @ Boston University" />
-    <meta property="og:title" content="Jaylin Starlin‑Ganaway | Portfolio" />
+    <!-- social sharing metadata -->
+    <meta property="og:title" content="Jaylin Starlin-Ganaway | Portfolio" />
     <meta property="og:description" content="Developer & CS Student @ Boston University" />
     <meta property="og:type" content="website" />
     <link rel="icon" href="img/favicon.png">
     <meta property="og:image" content="img/jsg-pfp.png">
+    <!-- preload google fonts, swap to stylesheet after load for performance -->
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap"
         as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
+        <!-- fallback font link when js is disabled -->
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap">
     </noscript>
 
+    <!-- site styles -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <!-- Intro overlay (short) -->
+    <!-- short intro overlay shown on first paint -->
     <div id="intro-overlay" aria-hidden="true">
         <div class="intro-content">
             <h1>Welcome</h1>
         </div>
     </div>
 
-    <!-- Fixed interactive background -->
+    <!-- fixed canvas for animated background particles -->
     <canvas id="bg" aria-hidden="true"></canvas>
 
-    <!-- Header / Nav -->
+    <!-- primary nav/header with dark toggle -->
     <header class="navbar" role="navigation" aria-label="Primary">
         <div class="container">
+            <!-- logo scrolls to hero -->
             <a href="#home" class="logo tilt">JSG</a>
+            <!-- in-page nav links -->
             <ul class="nav-links" role="list">
                 <li><a class="tilt" href="#projects">Projects</a></li>
                 <li><a class="tilt" href="#skills">Skills</a></li>
@@ -44,6 +52,7 @@
                 <li><a class="tilt" href="#education">Education</a></li>
                 <li><a class="tilt" href="#contact">Contact</a></li>
             </ul>
+            <!-- actions: theme toggle -->
             <div class="nav-actions">
                 <button id="toggle-dark" class="btn ghost" aria-pressed="false"
                     aria-label="Toggle dark mode">Dark</button>
@@ -51,19 +60,22 @@
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- hero section with name, tagline, ctas, and avatar -->
     <section id="home" class="home section visible" aria-label="Hero">
         <div class="container hero-grid">
             <div class="hero-copy">
-                <h1 class="hero-title">Jaylin Starlin‑Ganaway</h1>
+                <h1 class="hero-title">Jaylin Starlin-Ganaway</h1>
                 <p class="tagline">Developer & CS Student @ Boston University</p>
                 <div class="cta-row">
+                    <!-- external link to project hub -->
                     <a href="https://jsg-websites.onrender.com/" class="btn primary tilt">My Websites</a>
+                    <!-- resume download opens in new tab -->
                     <a href="RESUME-AUGUST-25.pdf" class="btn ghost tilt" target="_blank" rel="noopener">Download
                         Resume</a>
                 </div>
             </div>
             <div class="hero-visual">
+                <!-- avatar with glow effect -->
                 <div class="avatar-glow tilt">
                     <img src="jsg-pfp.jpg" alt="Jaylin Starlin-Ganaway" class="profile-pic">
                 </div>
@@ -71,7 +83,7 @@
         </div>
     </section>
 
-    <!-- About -->
+    <!-- about section: brief bio -->
     <section id="about" class="section">
         <div class="container">
             <h2>About</h2>
@@ -81,14 +93,14 @@
         </div>
     </section>
 
-    <!-- Projects -->
+    <!-- projects section: cards for selected work -->
     <section id="projects" class="section" aria-label="Projects">
         <div class="container">
             <h2>Projects</h2>
             <div class="projects-grid">
                 <article class="project-card tilt">
-                    <!-- <img class="project-thumb" src="img/multisite.jpg" alt="Multi‑Site Launcher dashboard preview" /> -->
-                    <h3><a href="https://jsg-websites.onrender.com/" target="_blank" rel="noopener">Multi‑Site
+                    <!-- optional project image is commented out -->
+                    <h3><a href="https://jsg-websites.onrender.com/" target="_blank" rel="noopener">Multi-Site
                             Launcher</a></h3>
                     <p>Django-powered hub for accessing my personal web projects. Features websites ranging from macro
                         data analysis to a Harry Potter guessing game. Contains Django and Next.js apps, hosted on
@@ -98,7 +110,7 @@
                 </article>
 
                 <article class="project-card tilt">
-                    <!-- <img class="project-thumb" src="img/compiler.jpg" alt="Compiler pipeline diagram" /> -->
+                    <!-- optional image commented out -->
                     <h3>Language Compiler</h3>
                     <p>Python-based compiler and interpreter for an extended lambda calculus. Implements
                         parsing, type checking, and evaluates constructs like tuples, and
@@ -108,7 +120,7 @@
                 </article>
 
                 <article class="project-card tilt">
-                    <!-- <img class="project-thumb" src="img/android-app.jpg" alt="Android app map and mini‑games screen" /> -->
+                    <!-- optional image commented out -->
                     <h3>Android App</h3>
                     <p>Developed an Android app in Kotlin that uses the Google Maps API to guide users to historical
                         landmarks in Boston. Integrated location-based triggers so that when users arrive at a landmark,
@@ -117,7 +129,7 @@
                 </article>
 
                 <article class="project-card tilt">
-                    <!-- <img class="project-thumb" src="img/rtp.jpg" alt="Network packets diagram" /> -->
+                    <!-- optional image commented out -->
                     <h3>Reliable Transport Protocol</h3>
                     <p>Implemented Selective Repeat and Go-Back-N protocols in a simulated network environment to
                         guarantee reliable packet delivery. Designed and tested mechanisms for packet loss recovery,
@@ -129,7 +141,7 @@
         </div>
     </section>
 
-    <!-- Skills -->
+    <!-- skills section: simple list of tools and languages -->
     <section id="skills" class="section">
         <div class="container">
             <h2>Skills</h2>
@@ -148,7 +160,7 @@
     </section>
 
 
-    <!-- Experience -->
+    <!-- experience section: roles with dates and bullets -->
     <section id="experience" class="section">
         <div class="container">
             <h2>Experience</h2>
@@ -204,7 +216,7 @@
         </div>
     </section>
 
-    <!-- Education -->
+    <!-- education section: degrees and schools -->
     <section id="education" class="section">
         <div class="container">
             <h2>Education</h2>
@@ -221,7 +233,7 @@
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- contact section: email and linkedin -->
     <section id="contact" class="section">
         <div class="container">
             <h2>Contact</h2>
@@ -231,13 +243,14 @@
         </div>
     </section>
 
-    <!-- Scripts -->
+    <!-- scripts -->
     <script>
-        // Dark mode with system preference
+        // dark mode toggle using prefers-color-scheme + localstorage
         const body = document.body;
         const toggle = document.getElementById("toggle-dark");
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+        // read saved choice; default to dark unless explicitly disabled
         const saved = localStorage.getItem("darkMode");
         if (saved !== "disabled") {
             body.classList.add("dark");
@@ -247,6 +260,7 @@
             toggle.textContent = "Dark";
         }
 
+        // update theme, button state, and persist choice
         toggle.addEventListener("click", () => {
             body.classList.toggle("dark");
             const on = body.classList.contains("dark");
@@ -257,21 +271,23 @@
     </script>
 
     <script>
-        // Section reveal (respect reduced motion)
+        // section reveal using intersectionobserver; respects reduced motion
         const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         if (!reduce) {
+            // watch all sections and add .visible when they enter viewport
             const sections = document.querySelectorAll(".section");
             const io = new IntersectionObserver(entries => {
                 entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
             }, { threshold: 0.1 });
             sections.forEach(s => io.observe(s));
         } else {
+            // no animation: show all sections immediately
             document.querySelectorAll(".section").forEach(s => s.classList.add("visible"));
         }
     </script>
 
     <script>
-        // Short intro overlay remove
+        // remove intro overlay after its fade-out animation ends
         document.addEventListener('DOMContentLoaded', () => {
             const overlay = document.getElementById('intro-overlay');
             overlay.addEventListener('animationend', e => {
@@ -281,13 +297,14 @@
     </script>
 
     <script>
-        // Lightweight interactive background (particles + parallax)
+        // animated particle background with light mouse repulsion; paused for reduced motion
         (() => {
             const c = document.getElementById('bg');
             const ctx = c.getContext('2d');
             let w, h, particles, mouse = { x: 0, y: 0 };
             const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+            // match canvas size to viewport
             function resize() {
                 w = c.width = window.innerWidth;
                 h = c.height = window.innerHeight;
@@ -295,6 +312,7 @@
             window.addEventListener('resize', resize);
             resize();
 
+            // create particle set sized to screen area (with cap)
             function init() {
                 const count = Math.min(80, Math.floor(w * h / 20000));
                 particles = Array.from({ length: count }, () => ({
@@ -305,12 +323,15 @@
             }
             init();
 
+            // track mouse for gentle push effect
             window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
 
+            // main animation loop
             function step() {
                 ctx.clearRect(0, 0, w, h);
                 ctx.globalAlpha = 0.9;
                 for (const p of particles) {
+                    // move particle and bounce off edges
                     p.x += p.vx; p.y += p.vy;
                     if (p.x < 0 || p.x > w) p.vx *= -1;
                     if (p.y < 0 || p.y > h) p.vy *= -1;
@@ -320,12 +341,13 @@
                     const d2 = dx * dx + dy * dy;
                     if (d2 < 9000) { p.vx += dx * 0.00005; p.vy += dy * 0.00005; }
 
+                    // draw particle using css variable color with fallback
                     ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--dot').trim() || '#0a2a33';
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
                     ctx.fill();
                 }
-                // connect close points
+                // draw connecting lines between nearby particles
                 ctx.globalAlpha = 0.12;
                 ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--link').trim() || '#1ABC9C';
                 for (let i = 0; i < particles.length; i++) {
@@ -341,6 +363,7 @@
                         }
                     }
                 }
+                // continue loop unless user prefers reduced motion
                 if (!reduce) requestAnimationFrame(step);
             }
             if (!reduce) requestAnimationFrame(step);
@@ -348,16 +371,20 @@
     </script>
 
     <script>
-        // Subtle 3D tilt on hover (keyboard safe)
+        // subtle 3d tilt effect on hover/focus; resets on leave/blur
         const tilts = document.querySelectorAll('.tilt');
         tilts.forEach(el => {
             el.addEventListener('mousemove', e => {
                 const r = el.getBoundingClientRect();
+                // x/y are normalized mouse positions relative to element center
                 const x = (e.clientX - r.left) / r.width - 0.5;
                 const y = (e.clientY - r.top) / r.height - 0.5;
+                // apply perspective rotation based on mouse position
                 el.style.transform = `perspective(600px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg) translateZ(0)`;
             });
+            // clear transform when pointer leaves
             el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+            // accessible emphasis for keyboard users
             el.addEventListener('focus', () => { el.style.transform = 'scale(1.02)'; });
             el.addEventListener('blur', () => { el.style.transform = ''; });
         });

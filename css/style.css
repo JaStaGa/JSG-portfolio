@@ -1,22 +1,33 @@
-/* Reset & base */
+/* reset all elements: remove default margin/padding, set box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* light theme variables */
 :root {
   --bg: #e8f8f5;
+  /* page background */
   --text: #2C3E50;
+  /* main text color */
   --brand: #1ABC9C;
+  /* primary brand color */
   --brand-2: #5ad2bf;
+  /* secondary brand color */
   --card: #ffffff;
+  /* card background */
   --nav: #2C3E50;
+  /* nav background */
   --muted: #6b7b86;
+  /* muted text color */
   --link: #1ABC9C;
+  /* link color */
   --dot: #0b2a33;
+  /* particle dot color */
 }
 
+/* dark theme variables (applied when body has .dark) */
 body.dark {
   --bg: #121212;
   --text: #e0e0e0;
@@ -29,10 +40,12 @@ body.dark {
   --dot: #153c45;
 }
 
+/* enable smooth scroll for anchor links */
 html {
   scroll-behavior: smooth;
 }
 
+/* base body styles */
 body {
   font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Arial, sans-serif;
   background: var(--bg);
@@ -40,7 +53,7 @@ body {
   line-height: 1.6;
 }
 
-/* Canvas background */
+/* full-screen fixed canvas background with radial gradients */
 #bg {
   position: fixed;
   inset: 0;
@@ -51,7 +64,7 @@ body {
   filter: saturate(1.05);
 }
 
-/* Container */
+/* content container with max width */
 .container {
   width: 90%;
   max-width: 1100px;
@@ -60,7 +73,7 @@ body {
   z-index: 1;
 }
 
-/* Navbar */
+/* navbar container */
 .navbar {
   background: var(--nav);
   position: sticky;
@@ -75,6 +88,7 @@ body {
   padding: .75rem 0;
 }
 
+/* site logo text */
 .logo {
   color: var(--brand);
   font-family: 'Montserrat', sans-serif;
@@ -82,6 +96,7 @@ body {
   text-decoration: none;
 }
 
+/* nav links list */
 .nav-links {
   list-style: none;
   display: flex;
@@ -97,15 +112,18 @@ body {
   border-radius: 6px;
 }
 
+/* focus outline for accessibility */
 .nav-links a:focus-visible {
   outline: 2px solid var(--brand);
   outline-offset: 2px;
 }
 
+/* light mode override: nav links white */
 body:not(.dark) .nav-links a {
   color: #fff;
 }
 
+/* light mode ghost button styles */
 body:not(.dark) .btn.ghost {
   color: var(--brand);
   border-color: var(--brand);
@@ -116,12 +134,14 @@ body:not(.dark) .btn.ghost:hover {
   background: rgba(26, 188, 156, .1)
 }
 
+/* container for right-aligned nav actions */
 .nav-actions {
   margin-left: auto;
   display: flex;
   gap: .5rem;
 }
 
+/* base button styles */
 .btn {
   display: inline-block;
   border: none;
@@ -133,6 +153,7 @@ body:not(.dark) .btn.ghost:hover {
   transition: transform .15s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
 }
 
+/* primary button style */
 .btn.primary {
   background: var(--brand);
   color: #07241f;
@@ -143,6 +164,7 @@ body:not(.dark) .btn.ghost:hover {
   transform: translateY(-2px);
 }
 
+/* ghost button style */
 .btn.ghost {
   background: transparent;
   color: var(--text);
@@ -153,22 +175,24 @@ body:not(.dark) .btn.ghost:hover {
   background: rgba(255, 255, 255, .06);
 }
 
-/* Sections */
+/* section padding except hero */
 .section:not(.home) {
   padding: 4.5rem 0 2.5rem;
 }
 
+/* heading styles */
 h1,
 h2 {
   font-family: 'Montserrat', sans-serif;
   margin-bottom: 1rem;
 }
 
-/* Hero */
+/* hero section spacing */
 .home {
   padding: 5.5rem 0 3rem;
 }
 
+/* hero layout: text left, image right */
 .hero-grid {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -180,23 +204,27 @@ h2 {
   font-size: clamp(1.8rem, 3.5vw, 3rem);
 }
 
+/* smaller, muted tagline under hero title */
 .tagline {
   font-size: 1.1rem;
   color: var(--muted);
   margin-top: .35rem;
 }
 
+/* row of call-to-action buttons */
 .cta-row {
   display: flex;
   gap: .8rem;
   margin-top: 1rem;
 }
 
+/* center hero image */
 .hero-visual {
   display: flex;
   justify-content: center;
 }
 
+/* glowing background behind avatar */
 .avatar-glow {
   width: 180px;
   height: 180px;
@@ -208,9 +236,10 @@ h2 {
     inset 0 0 80px rgba(26, 188, 156, .25);
   backdrop-filter: blur(2px);
   padding: 10px;
-  /* ensures space around the image for glow */
+  /* keeps glow visible around image */
 }
 
+/* profile image inside avatar */
 .profile-pic {
   width: 100%;
   height: 100%;
@@ -220,6 +249,7 @@ h2 {
   box-shadow: 0 0 12px rgba(26, 188, 156, .4);
 }
 
+/* duplicate definition with fixed size */
 .profile-pic {
   width: 160px;
   height: 160px;
@@ -228,7 +258,7 @@ h2 {
   border: 3px solid var(--brand);
 }
 
-/* Projects */
+/* project cards grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -236,6 +266,7 @@ h2 {
   margin-top: 1rem;
 }
 
+/* individual project card */
 .project-card {
   background: var(--card);
   padding: 1rem;
@@ -249,6 +280,7 @@ h2 {
   box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
 }
 
+/* optional thumbnail image for projects */
 .project-thumb {
   width: 100%;
   height: 150px;
@@ -261,11 +293,13 @@ h2 {
   margin: .4rem 0 .2rem;
 }
 
+/* bullet list inside project card */
 .project-card .bullets {
   margin: .4rem 0 0 1.1rem;
   list-style: disc;
 }
 
+/* chip labels for tech used */
 .tech-chips {
   display: flex;
   flex-wrap: wrap;
@@ -281,12 +315,13 @@ h2 {
   font-size: .82rem;
 }
 
+/* dark mode chips */
 body.dark .tech-chips span {
   background: #222;
   color: #ddd;
 }
 
-/* Experience / Education */
+/* lists for experience and education */
 .experience-list,
 .education-list {
   list-style: none;
@@ -297,6 +332,7 @@ body.dark .tech-chips span {
   margin-bottom: 1.6rem;
 }
 
+/* headings for jobs and schools */
 .experience-list h3,
 .education-list h3 {
   font-size: 1.05rem;
@@ -307,18 +343,20 @@ body.dark .tech-chips span {
   align-items: baseline;
 }
 
+/* style for company/school names */
 .company,
 .school {
   font-style: italic;
   color: var(--muted);
 }
 
+/* date text inside headings */
 .date {
   font-weight: 500;
   opacity: .8;
 }
 
-/* Skills */
+/* skills list layout */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -335,7 +373,7 @@ body.dark .tech-chips span {
   font-size: .92rem;
 }
 
-/* Links */
+/* links inherit theme link color */
 a {
   color: var(--link);
 }
@@ -345,19 +383,20 @@ a:hover {
   transition: opacity .2s;
 }
 
-/* Reveal */
+/* initial hidden state for reveal animation */
 .section {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity .7s ease-out, transform .7s ease-out;
 }
 
+/* visible state after intersection observer triggers */
 .section.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Intro Overlay */
+/* full-screen intro overlay with fade animation */
 #intro-overlay {
   position: fixed;
   inset: 0;
@@ -377,6 +416,7 @@ a:hover {
   animation: fadeInText .6s ease forwards;
 }
 
+/* fade in text animation */
 @keyframes fadeInText {
   from {
     opacity: 0;
@@ -389,6 +429,7 @@ a:hover {
   }
 }
 
+/* fade out overlay animation */
 @keyframes fadeOutOverlay {
   to {
     opacity: 0;
@@ -396,13 +437,13 @@ a:hover {
   }
 }
 
-/* Tilt default for keyboard users */
+/* base style for tilt effect */
 .tilt {
   will-change: transform;
   transform-style: preserve-3d;
 }
 
-/* Mobile */
+/* mobile layout adjustments */
 @media (max-width: 750px) {
   .navbar .container {
     flex-wrap: wrap;
@@ -427,7 +468,7 @@ a:hover {
   }
 }
 
-/* Reduced motion */
+/* disable animations/transitions when reduced motion is preferred */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

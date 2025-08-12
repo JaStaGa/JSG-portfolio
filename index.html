@@ -15,9 +15,17 @@
 </head>
 
 <body>
-    <div id="boot-screen">
+    <!-- <div id="boot-screen">
         <pre id="boot-text"></pre>
+    </div> -->
+
+    <!-- Professional Intro Overlay -->
+    <div id="intro-overlay">
+        <div class="intro-content">
+            <h1>Welcome to Jaylin Starlin-Ganaway’s Portfolio</h1>
+        </div>
     </div>
+
 
     <!-- Navigation -->
     <header>
@@ -270,6 +278,17 @@
             { threshold: 0.1 }
         );
         sections.forEach(section => observer.observe(section));
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('intro-overlay');
+            overlay.addEventListener('animationend', e => {
+                if (e.animationName === 'fadeOutOverlay') {
+                    overlay.remove();
+                }
+            });
+        });
     </script>
 
 </body>

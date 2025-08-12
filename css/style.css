@@ -64,7 +64,6 @@ html {
   padding: 5rem 0 2rem;
 }
 
-
 .home {
   background: #1ABC9C;
   color: #F5F5F5;
@@ -161,6 +160,12 @@ h2 {
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Links */
@@ -169,35 +174,9 @@ a:hover {
   transition: opacity 0.3s;
 }
 
-/* ——— 90s Boot Screen Overlay ——— */
-#boot-screen {
-  position: fixed;
-  inset: 0;
-  /* top:0; right:0; bottom:0; left:0; */
-  background: #000;
-  display: flex;
-  align-items: flex-start;
-  /* start typing at the top */
-  justify-content: center;
-  padding: 2rem;
-  z-index: 9999;
-  opacity: 1;
-}
-
-#boot-text {
-  color: #0f0;
-  /* classic green text */
-  font-family: "Courier New", Courier, monospace;
-  font-size: 1rem;
-  line-height: 1.4;
-  white-space: pre-wrap;
-  /* preserve line breaks */
-}
-
-/* Mobile tweaks (max-width: 600px) */
+/* Mobile tweaks (max-width: 750px) */
 @media (max-width: 750px) {
 
-  /* 1) Stack nav into two rows and center it */
   .navbar .container {
     flex-direction: column;
     align-items: center;
@@ -213,7 +192,6 @@ a:hover {
     margin: 0.25rem 0.5rem;
   }
 
-  /* 2) Shrink logo and nav font slightly */
   .logo {
     font-size: 1.25rem;
   }
@@ -222,7 +200,6 @@ a:hover {
     font-size: 0.9rem;
   }
 
-  /* 3) Fit name & tagline on one line each */
   h1 {
     font-size: 1.75rem;
     text-align: center;
@@ -233,14 +210,12 @@ a:hover {
     text-align: center;
   }
 
-  /* 4) Stop floating dates and put them below the company line */
   .date {
     float: none;
     display: block;
     margin-top: 0.25rem;
   }
 
-  /* 5) Stack project cards, center skill pills */
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -251,6 +226,7 @@ a:hover {
   }
 }
 
+/* Dark Mode */
 body.dark {
   background: #121212;
   color: #e0e0e0;
@@ -289,6 +265,7 @@ body.dark a:hover {
   text-decoration: underline;
 }
 
+/* Section Reveal */
 .section {
   opacity: 0;
   transform: translateY(30px);
@@ -300,11 +277,47 @@ body.dark a:hover {
   transform: translateY(0);
 }
 
-.project-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* ——— Professional Intro Overlay ——— */
+
+/* Full-screen overlay */
+#intro-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--intro-bg, #111);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOutOverlay 3s ease forwards 2s;
+  pointer-events: all;
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+/* Centered welcome text */
+.intro-content h1 {
+  color: var(--intro-text, #fff);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  opacity: 0;
+  animation: fadeInText 1.5s ease forwards;
+}
+
+/* Fade in the text */
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade out the overlay */
+@keyframes fadeOutOverlay {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
 }

@@ -2,389 +2,539 @@
 <html lang="en">
 
 <head>
-    <!-- set character encoding and responsive viewport -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- page title and basic seo -->
-    <title>Jaylin Starlin-Ganaway | Portfolio</title>
-    <meta name="description" content="Developer & CS Student @ Boston University" />
-    <!-- social sharing metadata -->
-    <meta property="og:title" content="Jaylin Starlin-Ganaway | Portfolio" />
-    <meta property="og:description" content="Developer & CS Student @ Boston University" />
-    <meta property="og:type" content="website" />
-    <link rel="icon" href="img/favicon.png">
-    <meta property="og:image" content="img/jsg-pfp.png">
-    <!-- preload google fonts, swap to stylesheet after load for performance -->
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <!-- fallback font link when js is disabled -->
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400;500&display=swap">
-    </noscript>
 
-    <!-- site styles -->
+    <title>Jaylin Starlin-Ganaway | Software Developer</title>
+    <meta name="description"
+        content="Portfolio of Jaylin Starlin-Ganaway, Boston University Computer Science graduate focused on web development, software projects, and technology education." />
+
+    <meta property="og:title" content="Jaylin Starlin-Ganaway | Software Developer" />
+    <meta property="og:description"
+        content="Boston University Computer Science graduate building web applications, software projects, and educational technology tools." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="jsg-pfp.jpg" />
+
+    <link rel="icon" href="img/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
-    <!-- short intro overlay shown on first paint -->
-    <div id="intro-overlay" aria-hidden="true">
-        <div class="intro-content">
-            <h1>Welcome</h1>
-        </div>
-    </div>
-
-    <!-- fixed canvas for animated background particles -->
+<body class="dark">
     <canvas id="bg" aria-hidden="true"></canvas>
 
-    <!-- primary nav/header with dark toggle -->
-    <header class="navbar" role="navigation" aria-label="Primary">
-        <div class="container">
-            <!-- logo scrolls to hero -->
-            <a href="#home" class="logo tilt">JSG</a>
-            <!-- in-page nav links -->
-            <ul class="nav-links" role="list">
-                <li><a class="tilt" href="#projects">Projects</a></li>
-                <li><a class="tilt" href="#skills">Skills</a></li>
-                <li><a class="tilt" href="#experience">Experience</a></li>
-                <li><a class="tilt" href="#education">Education</a></li>
-                <li><a class="tilt" href="#contact">Contact</a></li>
-            </ul>
-            <!-- actions: theme toggle -->
-            <div class="nav-actions">
-                <button id="toggle-dark" class="btn ghost" aria-pressed="false"
-                    aria-label="Toggle dark mode">Dark</button>
+    <header class="site-header">
+        <nav class="container nav" aria-label="Primary navigation">
+            <a href="#home" class="brand" aria-label="Go to home">JSG</a>
+
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+                <span>Menu</span>
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+
+            <div class="nav-menu" id="site-menu">
+                <a href="#profile">Profile</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
             </div>
-        </div>
+
+            <button id="toggle-dark" class="theme-toggle" type="button" aria-pressed="true">
+                Light
+            </button>
+        </nav>
     </header>
 
-    <!-- hero section with name, tagline, ctas, and avatar -->
-    <section id="home" class="home section visible" aria-label="Hero">
-        <div class="container hero-grid">
-            <div class="hero-copy">
-                <h1 class="hero-title">Jaylin Starlin-Ganaway</h1>
-                <p class="tagline">Computer Science Student | Software Developer | Aspiring Coding Instructor</p>
-                <p class="hero-summary">Building software projects while preparing for roles in software development,
-                    STEM instruction, and coding education.</p>
-                <div class="cta-row">
-                    <a href="https://jsg-websites.onrender.com/" class="btn primary tilt">My Websites</a>
-                    <a href="RESUME-OCTOBER-25.pdf" class="btn ghost tilt" target="_blank" rel="noopener">Download
-                        Resume</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <!-- avatar with glow effect -->
-                <div class="avatar-glow tilt">
-                    <img src="jsg-pfp.jpg" alt="Jaylin Starlin-Ganaway" class="profile-pic">
-                </div>
-            </div>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero section visible" aria-label="Hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Boston University Computer Science Graduate</p>
+                    <h1>Jaylin Starlin-Ganaway</h1>
+                    <p class="hero-title-line">
+                        Web Developer | Software Builder | Technology Educator
+                    </p>
+                    <p class="hero-summary">
+                        I build practical web projects, organize technical ideas into usable products, and bring a
+                        teaching-focused mindset to software development, IT, and educational technology.
+                    </p>
 
-    <!-- about section: brief bio -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About</h2>
-            <p>Boston University Computer Science student with experience building software projects and supporting
-                student learning environments. I am interested in software development and coding education, with a
-                growing focus on roles where I can apply my technical skills while helping students build confidence in
-                programming, problem solving, and technology.</p>
-        </div>
-    </section>
-
-    <section id="focus" class="section">
-        <div class="container">
-            <h2>Career Focus</h2>
-            <p>I am currently pursuing opportunities in software development, STEM instruction, and coding education. My
-                goal is to continue building technical projects while also helping students develop confidence in
-                programming and technology.</p>
-        </div>
-    </section>
-
-    <!-- projects section: cards for selected work -->
-    <section id="projects" class="section" aria-label="Projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <article class="project-card tilt">
-                    <!-- optional project image is commented out -->
-                    <h3><a href="https://jsg-websites.onrender.com/" target="_blank" rel="noopener">Multi-Site
-                            Launcher</a></h3>
-                    <p>Built a Django-powered hub that organizes and launches my personal web projects, including
-                        data-driven tools, interactive games, and portfolio apps. Serves as a central showcase for
-                        projects built with Django, Next.js, Render, and Vercel.</p>
-                    <div class="tech-chips"><span>Django</span><span>Python</span><span>JavaScript</span></div>
-                </article>
-
-                <article class="project-card tilt">
-                    <!-- optional image commented out -->
-                    <h3>Language Compiler</h3>
-                    <p>Built a Python-based compiler and interpreter for an extended lambda calculus language.
-                        Implemented parsing, type checking, and evaluation for constructs such as tuples and
-                        let-bindings, creating a functional execution model for structured expressions.</p>
-                    <div class="tech-chips"><span>Python</span><span>Lambda Calculus</span><span>Compiler Design</span>
+                    <div class="hero-tags" aria-label="Portfolio highlights">
+                        <span>B.A. Computer Science</span>
+                        <span>Django / Next.js</span>
+                        <span>Responsive Web Design</span>
                     </div>
-                </article>
 
-                <article class="project-card tilt">
-                    <!-- optional image commented out -->
-                    <h3>Android App</h3>
-                    <p>Developed an Android app in Kotlin that uses the Google Maps API to guide users to historical
-                        landmarks in Boston. Added location-based gameplay features that unlock themed guessing
-                        challenges and virtual rewards at each destination.</p>
-                    <div class="tech-chips"><span>Kotlin</span><span>Android Studio</span></div>
-                </article>
+                    <div class="cta-row">
+                        <a href="#projects" class="btn primary">View Projects</a>
+                        <a href="RESUME-JUNE-26-1.pdf" class="btn secondary" target="_blank" rel="noopener">Download Resume</a>
+                    </div>
+                </div>
 
-                <article class="project-card tilt">
-                    <!-- optional image commented out -->
-                    <h3>Reliable Transport Protocol</h3>
-                    <p>Implemented Selective Repeat and Go-Back-N protocols in a simulated network environment to
-                        guarantee reliable packet delivery. Designed and tested mechanisms for packet loss recovery,
-                        sequencing, and flow control.</p>
-                    <div class="tech-chips"><span>C++</span></div>
-                </article>
+                <aside class="hero-card" aria-label="Quick profile">
+                    <div class="avatar-shell">
+                        <img src="jsg-pfp.jpg" alt="Portrait of Jaylin Starlin-Ganaway" class="profile-pic">
+                    </div>
 
+                    <div class="quick-card">
+                        <p class="quick-label">Current Focus</p>
+                        <p>Entry-level software, web development, IT, and technology education roles.</p>
+                    </div>
+
+                    <div class="quick-card">
+                        <p class="quick-label">Based In</p>
+                        <p>New York City area, with Boston University background.</p>
+                    </div>
+                </aside>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- skills section: simple list of tools and languages -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Python</li>
-                <li>Java / Kotlin</li>
-                <li>C++</li>
-                <li>OCaml</li>
-                <li>SQL</li>
-                <li>HTML / CSS / JavaScript</li>
-                <li>Django</li>
-                <li>Next.js</li>
-                <li>Android Studio</li>
-                <li>Lesson Planning</li>
-                <li>Student Mentorship</li>
-            </ul>
-        </div>
-    </section>
+        <section id="profile" class="section">
+            <div class="container split-section">
+                <div>
+                    <p class="section-kicker">Profile</p>
+                    <h2>Software development with a teaching mindset.</h2>
+                </div>
 
+                <div class="profile-panel">
+                    <p>
+                        I am a Boston University Computer Science graduate with experience building web applications,
+                        Django and Next.js projects, and education-focused technical tools. My background combines
+                        programming, customer-facing work, and youth mentorship, which has shaped the way I approach
+                        software: clearly, practically, and with the end user in mind.
+                    </p>
+                    <p>
+                        I am currently focused on improving my project portfolio, building stronger production-ready web
+                        experiences, and pursuing entry-level opportunities in software development, web development,
+                        IT, and technology education.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <!-- experience section: roles with dates and bullets -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2>Experience</h2>
-            <ul class="experience-list" role="list">
+        <section id="projects" class="section" aria-label="Projects">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Selected Work</p>
+                    <h2>Projects</h2>
+                    <p>
+                        A mix of live web projects, academic computer science work, and practical development
+                        experience.
+                    </p>
+                </div>
 
-                <li>
-                    <h3>Group Leader <span class="date">Oct 2025 – Present</span></h3>
-                    <p class="company">UAU Cornerstone South Beach, Staten Island, NY</p>
-                    <ul>
-                        <li>Supervise and mentor a daily group of 2nd–3rd grade students in an after-school program.
-                        </li>
-                        <li>Assist students with homework and guide them through academic problem solving.</li>
-                        <li>Plan and lead structured learning activities that encourage creativity, teamwork, and
-                            critical thinking.</li>
-                        <li>Foster a supportive learning environment that promotes positive behavior and student
-                            engagement.</li>
-                    </ul>
-                </li>
+                <div class="projects-grid">
+                    <article class="project-card featured">
+                        <div class="project-topline">
+                            <p class="project-type">Live Client Site</p>
+                            <a href="https://ngbllc.com" target="_blank" rel="noopener">Live</a>
+                        </div>
+                        <h3>NGBLLC Construction Website</h3>
+                        <p>
+                            Designed, built, and deployed a live website for a startup construction company, focusing on
+                            branding, responsive layout, page structure, and a professional business presentation.
+                        </p>
+                        <div class="tech-chips">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>Responsive Design</span>
+                            <span>FileZilla / SFTP</span>
+                        </div>
+                    </article>
 
-                <li>
-                    <h3>Sales Associate <span class="date">Nov 2024 – Present</span></h3>
-                    <p class="company">JD Sports, Staten Island, NY</p>
-                    <ul>
-                        <li>Assist customers in selecting footwear and apparel by identifying product needs, sizing, and
-                            availability.</li>
-                        <li>Provide product recommendations and support a positive in-store customer experience.</li>
-                        <li>Process transactions at the register with accuracy and efficiency.</li>
-                        <li>Maintain organized sales floor displays and support daily store operations.</li>
-                    </ul>
-                </li>
+                    <article class="project-card">
+                        <div class="project-topline">
+                            <p class="project-type">Live Web Hub</p>
+                            <a href="https://jsg-websites.onrender.com/" target="_blank" rel="noopener">Live</a>
+                        </div>
+                        <h3>Multi-Site Launcher</h3>
+                        <p>
+                            Built a Django-powered hub that organizes and launches personal web projects, including
+                            data-driven tools, interactive apps, and portfolio projects.
+                        </p>
+                        <div class="tech-chips">
+                            <span>Django</span>
+                            <span>Python</span>
+                            <span>Render</span>
+                            <span>Vercel</span>
+                        </div>
+                    </article>
 
-                <li>
-                    <h3>Bank Teller <span class="date">May 2023 – Mar 2024</span></h3>
-                    <p class="company">Eastern Bank, Allston, MA</p>
-                    <ul>
-                        <li>Processed customer transactions including cash deposits, withdrawals, and check cashing.
-                        </li>
-                        <li>Promoted bank products and services with clear communication.</li>
-                    </ul>
-                </li>
+                    <article class="project-card">
+                        <div class="project-topline">
+                            <p class="project-type">Academic CS Project</p>
+                        </div>
+                        <h3>Language Compiler</h3>
+                        <p>
+                            Built a Python-based compiler and interpreter for an extended lambda calculus language,
+                            implementing parsing, type checking, and expression evaluation.
+                        </p>
+                        <div class="tech-chips">
+                            <span>Python</span>
+                            <span>Compiler Design</span>
+                            <span>Type Checking</span>
+                        </div>
+                    </article>
 
-                <li>
-                    <h3>Member Service Coordinator <span class="date">Oct 2021 – Feb 2023</span></h3>
-                    <p class="company">MIT Recreation, Boston, MA</p>
-                    <ul>
-                        <li>Utilized Club Automation software to help members manage their memberships.</li>
-                        <li>Greeted and assisted members at the front desk and via phone calls.</li>
-                    </ul>
-                </li>
+                    <article class="project-card">
+                        <div class="project-topline">
+                            <p class="project-type">Academic CS Project</p>
+                        </div>
+                        <h3>Reliable Transport Protocol</h3>
+                        <p>
+                            Implemented Selective Repeat and Go-Back-N protocols in a simulated network environment to
+                            handle packet delivery, loss recovery, sequencing, and flow control.
+                        </p>
+                        <div class="tech-chips">
+                            <span>C++</span>
+                            <span>Networking</span>
+                            <span>Protocols</span>
+                        </div>
+                    </article>
 
-                <li>
-                    <h3>Teacher <span class="date">Jan 2021 – Sep 2021</span></h3>
-                    <p class="company">International STEM Education Association, Torrance, CA</p>
-                    <ul>
-                        <li>Taught programming (Python, Java) to students of various ages.</li>
-                        <li>Prepared and adapted lessons for different class sizes and topics.</li>
-                        <li>Offered tutoring support tailored to individual student needs.</li>
-                    </ul>
-                </li>
+                    <article class="project-card">
+                        <div class="project-topline">
+                            <p class="project-type">Mobile App</p>
+                        </div>
+                        <h3>Android Landmark Game</h3>
+                        <p>
+                            Developed a Kotlin Android app using Google Maps features to guide users to Boston landmarks
+                            and unlock location-based game activities.
+                        </p>
+                        <div class="tech-chips">
+                            <span>Kotlin</span>
+                            <span>Android Studio</span>
+                            <span>Google Maps</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-                <li>
-                    <h3>Office Assistant <span class="date">Oct 2017 – Mar 2019</span></h3>
-                    <p class="company">United Activities Unlimited, Staten Island, NY</p>
-                    <ul>
-                        <li>Assisted in designing identification cards for the Work Learn Grow Program.</li>
-                        <li>Maintained efficient office operations through file management and cleanliness.</li>
-                        <li>Managed front desk responsibilities including phone and visitor reception.</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </section>
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Technical Toolkit</p>
+                    <h2>Skills</h2>
+                    <p>
+                        Organized by how I use them: programming, web development, deployment, and education-focused
+                        work.
+                    </p>
+                </div>
 
-    <!-- education section: degrees and schools -->
-    <section id="education" class="section">
-        <div class="container">
-            <h2>Education</h2>
-            <ul class="education-list" role="list">
-                <li>
-                    <h3>Computer Science, B.A. <span class="date">Sep 2019 – May 2026 (Expected)</span></h3>
-                    <p class="school">Boston University, Boston, MA</p>
-                </li>
-                <li>
-                    <h3>High School Diploma <span class="date">Sep 2015 – May 2019</span></h3>
-                    <p class="school">Susan E. Wagner High School, Staten Island, NY</p>
-                </li>
-            </ul>
-        </div>
-    </section>
+                <div class="skills-board">
+                    <article class="skill-group">
+                        <h3>Languages</h3>
+                        <div class="skill-chips">
+                            <span>Python</span>
+                            <span>Java</span>
+                            <span>Kotlin</span>
+                            <span>C++</span>
+                            <span>OCaml</span>
+                            <span>SQL</span>
+                            <span>JavaScript</span>
+                            <span>TypeScript</span>
+                        </div>
+                    </article>
 
-    <!-- contact section: email and linkedin -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:jaylinstarlinganaway@gmail.com">jaylinstarlinganaway@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/jaylinstarlin-ganaway/" target="_blank"
-                    rel="noopener">linkedin.com/in/jaylinstarlin-ganaway</a></p>
-        </div>
-    </section>
+                    <article class="skill-group">
+                        <h3>Web & Frameworks</h3>
+                        <div class="skill-chips">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>React</span>
+                            <span>Next.js</span>
+                            <span>Django</span>
+                            <span>Tailwind CSS</span>
+                            <span>Responsive Design</span>
+                        </div>
+                    </article>
 
-    <!-- scripts -->
+                    <article class="skill-group">
+                        <h3>Tools & Deployment</h3>
+                        <div class="skill-chips">
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>Vercel</span>
+                            <span>Render</span>
+                            <span>MongoDB</span>
+                            <span>Android Studio</span>
+                            <span>FileZilla / SFTP</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-group">
+                        <h3>Professional Strengths</h3>
+                        <div class="skill-chips">
+                            <span>Problem Solving</span>
+                            <span>Technical Communication</span>
+                            <span>Lesson Planning</span>
+                            <span>Student Mentorship</span>
+                            <span>Customer Support</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Background</p>
+                    <h2>Experience</h2>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <div class="role-row">
+                            <div>
+                                <h3>Group Leader</h3>
+                                <p class="company">UAU Cornerstone South Beach · Staten Island, NY</p>
+                            </div>
+                            <span class="date">Oct 2025 – Present</span>
+                        </div>
+                        <ul>
+                            <li>Supervise 2nd–3rd grade students in a nonprofit afterschool program.</li>
+                            <li>Support homework, academic reinforcement, and structured learning activities.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="role-row">
+                            <div>
+                                <h3>Sales Associate</h3>
+                                <p class="company">JD Sports · Staten Island, NY</p>
+                            </div>
+                            <span class="date">Nov 2024 – Present</span>
+                        </div>
+                        <ul>
+                            <li>Assist customers with product selection, sizing, availability, and transactions.</li>
+                            <li>Maintain organized sales floor displays and support daily store operations.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="role-row">
+                            <div>
+                                <h3>Bank Teller</h3>
+                                <p class="company">Eastern Bank · Allston, MA</p>
+                            </div>
+                            <span class="date">May 2023 – Mar 2024</span>
+                        </div>
+                        <ul>
+                            <li>Processed customer transactions while maintaining accuracy and confidentiality.</li>
+                            <li>Communicated bank products and services clearly to customers.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="role-row">
+                            <div>
+                                <h3>Member Service Coordinator</h3>
+                                <p class="company">MIT Recreation · Boston, MA</p>
+                            </div>
+                            <span class="date">Oct 2021 – Feb 2023</span>
+                        </div>
+                        <ul>
+                            <li>Used Club Automation Software to assist members with accounts and memberships.</li>
+                            <li>Provided front-desk and phone support in a high-traffic recreation environment.</li>
+                        </ul>
+                    </article>
+
+                    <article class="timeline-item">
+                        <div class="role-row">
+                            <div>
+                                <h3>Programming Teacher</h3>
+                                <p class="company">International STEM Education Association · Remote</p>
+                            </div>
+                            <span class="date">Jan 2021 – Sep 2021</span>
+                        </div>
+                        <ul>
+                            <li>Taught Python and Java programming concepts to students of different ages.</li>
+                            <li>Adapted lessons and tutoring support to different class sizes and skill levels.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container education-card">
+                <div>
+                    <p class="section-kicker">Education</p>
+                    <h2>Boston University</h2>
+                    <p class="degree">Bachelor of Arts in Computer Science</p>
+                    <p class="muted">Graduated May 2026 · Boston, MA</p>
+                </div>
+
+                <div class="education-note">
+                    <p>
+                        Coursework and projects included web development, programming languages, Android development,
+                        algorithms, systems, and network protocol implementation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <div class="container contact-card">
+                <div>
+                    <p class="section-kicker">Contact</p>
+                    <h2>Let’s connect.</h2>
+                    <p>
+                        I am open to entry-level opportunities involving software development, web development, IT,
+                        educational technology, and coding instruction.
+                    </p>
+                </div>
+
+                <div class="contact-links">
+                    <a href="mailto:jaylinstarlinganaway@gmail.com">jaylinstarlinganaway@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/jaylinstarlin-ganaway/" target="_blank"
+                        rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/JaStaGa" target="_blank" rel="noopener">GitHub</a>
+                    <a href="RESUME-JUNE-26-1.pdf" target="_blank" rel="noopener">Resume</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <script>
-        // dark mode toggle using prefers-color-scheme + localstorage
         const body = document.body;
-        const toggle = document.getElementById("toggle-dark");
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const themeToggle = document.getElementById("toggle-dark");
+        const navToggle = document.getElementById("nav-toggle");
+        const navMenu = document.getElementById("site-menu");
 
-        // read saved choice; default to dark unless explicitly disabled
-        const saved = localStorage.getItem("darkMode");
-        if (saved !== "disabled") {
-            body.classList.add("dark");
-            toggle.setAttribute("aria-pressed", "true");
-            toggle.textContent = "Light";
-        } else {
-            toggle.textContent = "Dark";
+        function setTheme(isDark) {
+            body.classList.toggle("dark", isDark);
+            themeToggle.setAttribute("aria-pressed", String(isDark));
+            themeToggle.textContent = isDark ? "Light" : "Dark";
+            localStorage.setItem("theme", isDark ? "dark" : "light");
         }
 
-        // update theme, button state, and persist choice
-        toggle.addEventListener("click", () => {
-            body.classList.toggle("dark");
-            const on = body.classList.contains("dark");
-            toggle.setAttribute("aria-pressed", on ? "true" : "false");
-            toggle.textContent = on ? "Light" : "Dark";
-            localStorage.setItem("darkMode", on ? "enabled" : "disabled");
+        const savedTheme = localStorage.getItem("theme");
+        setTheme(savedTheme ? savedTheme === "dark" : true);
+
+        themeToggle.addEventListener("click", () => {
+            setTheme(!body.classList.contains("dark"));
         });
-    </script>
 
-    <script>
-        // section reveal using intersectionobserver; respects reduced motion
-        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (!reduce) {
-            // watch all sections and add .visible when they enter viewport
-            const sections = document.querySelectorAll(".section");
-            const io = new IntersectionObserver(entries => {
-                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
-            }, { threshold: 0.1 });
-            sections.forEach(s => io.observe(s));
-        } else {
-            // no animation: show all sections immediately
-            document.querySelectorAll(".section").forEach(s => s.classList.add("visible"));
-        }
-    </script>
+        navToggle.addEventListener("click", () => {
+            const open = navMenu.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", String(open));
+        });
 
-    <script>
-        // remove intro overlay after its fade-out animation ends
-        document.addEventListener('DOMContentLoaded', () => {
-            const overlay = document.getElementById('intro-overlay');
-            overlay.addEventListener('animationend', e => {
-                if (e.animationName === 'fadeOutOverlay') overlay.remove();
+        navMenu.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.remove("open");
+                navToggle.setAttribute("aria-expanded", "false");
             });
         });
+
+        document.addEventListener("click", event => {
+            const clickedInsideNav = event.target.closest(".nav");
+            if (!clickedInsideNav) {
+                navMenu.classList.remove("open");
+                navToggle.setAttribute("aria-expanded", "false");
+            }
+        });
     </script>
 
     <script>
-        // animated particle background with light mouse repulsion; paused for reduced motion
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (!reduceMotion) {
+            const sections = document.querySelectorAll(".section");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            sections.forEach(section => observer.observe(section));
+        } else {
+            document.querySelectorAll(".section").forEach(section => section.classList.add("visible"));
+        }
+    </script>
+
+    <script>
         (() => {
-            const c = document.getElementById('bg');
-            const ctx = c.getContext('2d');
-            let w, h, particles, mouse = { x: 0, y: 0 };
-            const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            const canvas = document.getElementById("bg");
+            const ctx = canvas.getContext("2d");
+            const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+            let width;
+            let height;
+            let particles = [];
+            let mouse = { x: -9999, y: -9999 };
 
-            // match canvas size to viewport
             function resize() {
-                w = c.width = window.innerWidth;
-                h = c.height = window.innerHeight;
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
             }
-            window.addEventListener('resize', resize);
-            resize();
 
-            // create particle set sized to screen area (with cap)
             function init() {
-                const count = Math.min(80, Math.floor(w * h / 20000));
+                const count = Math.min(65, Math.floor((width * height) / 26000));
                 particles = Array.from({ length: count }, () => ({
-                    x: Math.random() * w, y: Math.random() * h,
-                    vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
-                    r: Math.random() * 2 + 0.6
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.28,
+                    vy: (Math.random() - 0.5) * 0.28,
+                    r: Math.random() * 1.6 + 0.6
                 }));
             }
-            init();
 
-            // track mouse for gentle push effect
-            window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+            function cssVar(name, fallback) {
+                return getComputedStyle(document.body).getPropertyValue(name).trim() || fallback;
+            }
 
-            // main animation loop
-            function step() {
-                ctx.clearRect(0, 0, w, h);
-                ctx.globalAlpha = 0.9;
-                for (const p of particles) {
-                    // move particle and bounce off edges
-                    p.x += p.vx; p.y += p.vy;
-                    if (p.x < 0 || p.x > w) p.vx *= -1;
-                    if (p.y < 0 || p.y > h) p.vy *= -1;
+            function draw() {
+                ctx.clearRect(0, 0, width, height);
 
-                    // mild mouse repulsion
-                    const dx = p.x - mouse.x, dy = p.y - mouse.y;
-                    const d2 = dx * dx + dy * dy;
-                    if (d2 < 9000) { p.vx += dx * 0.00005; p.vy += dy * 0.00005; }
+                for (const particle of particles) {
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
 
-                    // draw particle using css variable color with fallback
-                    ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--dot').trim() || '#0a2a33';
+                    if (particle.x < 0 || particle.x > width) particle.vx *= -1;
+                    if (particle.y < 0 || particle.y > height) particle.vy *= -1;
+
+                    const dx = particle.x - mouse.x;
+                    const dy = particle.y - mouse.y;
+                    const distance = dx * dx + dy * dy;
+
+                    if (distance < 7000) {
+                        particle.vx += dx * 0.000035;
+                        particle.vy += dy * 0.000035;
+                    }
+
+                    ctx.globalAlpha = 0.8;
+                    ctx.fillStyle = cssVar("--dot", "#1abc9c");
                     ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
                     ctx.fill();
                 }
-                // draw connecting lines between nearby particles
+
                 ctx.globalAlpha = 0.12;
-                ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--link').trim() || '#1ABC9C';
+                ctx.strokeStyle = cssVar("--link", "#1abc9c");
+
                 for (let i = 0; i < particles.length; i++) {
                     for (let j = i + 1; j < particles.length; j++) {
-                        const a = particles[i], b = particles[j];
-                        const dx = a.x - b.x, dy = a.y - b.y;
-                        const d2 = dx * dx + dy * dy;
-                        if (d2 < 120 * 120) {
+                        const a = particles[i];
+                        const b = particles[j];
+                        const dx = a.x - b.x;
+                        const dy = a.y - b.y;
+                        const distance = dx * dx + dy * dy;
+
+                        if (distance < 130 * 130) {
                             ctx.beginPath();
                             ctx.moveTo(a.x, a.y);
                             ctx.lineTo(b.x, b.y);
@@ -392,31 +542,25 @@
                         }
                     }
                 }
-                // continue loop unless user prefers reduced motion
-                if (!reduce) requestAnimationFrame(step);
-            }
-            if (!reduce) requestAnimationFrame(step);
-        })();
-    </script>
 
-    <script>
-        // subtle 3d tilt effect on hover/focus; resets on leave/blur
-        const tilts = document.querySelectorAll('.tilt');
-        tilts.forEach(el => {
-            el.addEventListener('mousemove', e => {
-                const r = el.getBoundingClientRect();
-                // x/y are normalized mouse positions relative to element center
-                const x = (e.clientX - r.left) / r.width - 0.5;
-                const y = (e.clientY - r.top) / r.height - 0.5;
-                // apply perspective rotation based on mouse position
-                el.style.transform = `perspective(600px) rotateX(${(-y * 6).toFixed(2)}deg) rotateY(${(x * 8).toFixed(2)}deg) translateZ(0)`;
+                requestAnimationFrame(draw);
+            }
+
+            resize();
+            init();
+
+            window.addEventListener("resize", () => {
+                resize();
+                init();
             });
-            // clear transform when pointer leaves
-            el.addEventListener('mouseleave', () => { el.style.transform = ''; });
-            // accessible emphasis for keyboard users
-            el.addEventListener('focus', () => { el.style.transform = 'scale(1.02)'; });
-            el.addEventListener('blur', () => { el.style.transform = ''; });
-        });
+
+            window.addEventListener("mousemove", event => {
+                mouse.x = event.clientX;
+                mouse.y = event.clientY;
+            });
+
+            if (!reduceMotion) draw();
+        })();
     </script>
 </body>
 

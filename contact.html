@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact | Jaylin Starlin-Ganaway</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfolio of Jaylin Starlin-Ganaway, a Boston University Computer Science graduate building practical web applications and technology-focused projects.">
+    <link rel="icon" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body class="dark" data-page="contact">
+    <canvas id="bg" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+        <nav class="container nav" aria-label="Primary navigation">
+            <a href="index.html" class="brand" aria-label="Jaylin Starlin-Ganaway home">JSG</a>
+
+            <button class="nav-toggle" id="nav-toggle" type="button"
+                aria-expanded="false" aria-controls="site-menu">
+                <span>Menu</span>
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+
+            <div class="nav-menu" id="site-menu">
+                <a href="index.html" data-nav="profile">Profile</a>
+                <a href="projects.html" data-nav="projects">Projects</a>
+                <a href="skills-experience.html" data-nav="background">Skills &amp; Experience</a>
+                <a href="contact.html" data-nav="contact">Contact</a>
+                <a class="resume-nav" href="RESUME-JUNE-26-1.pdf" target="_blank" rel="noopener">Résumé</a>
+            </div>
+
+            <button id="toggle-dark" class="theme-toggle" type="button" aria-pressed="true">
+                Light
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-page">
+            <div class="container contact-layout">
+                <div class="contact-copy reveal">
+                    <p class="eyebrow">Contact</p>
+                    <h1>Let’s build<br>something useful.</h1>
+                    <p>
+                        I am open to entry-level software, web development, IT, QA, educational
+                        technology, and coding-instruction opportunities.
+                    </p>
+                </div>
+
+                <div class="contact-panel reveal">
+                    <a href="mailto:jaylinstarlinganaway@gmail.com" class="contact-row">
+                        <span>Email</span>
+                        <strong>jaylinstarlinganaway@gmail.com</strong>
+                        <i aria-hidden="true">↗</i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/jaylinstarlin-ganaway/" target="_blank" rel="noopener" class="contact-row">
+                        <span>LinkedIn</span>
+                        <strong>Jaylin Starlin-Ganaway</strong>
+                        <i aria-hidden="true">↗</i>
+                    </a>
+
+                    <a href="https://github.com/JaStaGa" target="_blank" rel="noopener" class="contact-row">
+                        <span>GitHub</span>
+                        <strong>@JaStaGa</strong>
+                        <i aria-hidden="true">↗</i>
+                    </a>
+
+                    <a href="RESUME-JUNE-26-1.pdf" target="_blank" rel="noopener" class="contact-row">
+                        <span>Résumé</span>
+                        <strong>View PDF</strong>
+                        <i aria-hidden="true">↗</i>
+                    </a>
+
+                    <div class="contact-row static">
+                        <span>Location</span>
+                        <strong>New York City Metropolitan Area</strong>
+                        <i aria-hidden="true">•</i>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-row">
+            <p>© <span id="year"></span> Jaylin Starlin-Ganaway</p>
+            <div>
+                <a href="mailto:jaylinstarlinganaway@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/jaylinstarlin-ganaway/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/JaStaGa" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

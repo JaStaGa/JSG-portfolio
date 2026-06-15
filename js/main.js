@@ -4,6 +4,35 @@ const navToggle = document.getElementById("nav-toggle");
 const navMenu = document.getElementById("site-menu");
 const currentPage = body.dataset.page;
 
+if (currentPage === "projects" && !window.location.hash) {
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto"
+    });
+  };
+
+  scrollToTop();
+  window.addEventListener("pageshow", scrollToTop);
+  window.addEventListener("load", scrollToTop);
+
+  document.querySelectorAll(".browser-frame iframe").forEach((iframe) => {
+    iframe.tabIndex = -1;
+
+    iframe.addEventListener("load", () => {
+      if (document.activeElement === iframe) {
+        iframe.blur();
+        scrollToTop();
+      }
+    });
+  });
+}
+
 function setTheme(isDark) {
   body.classList.toggle("dark", isDark);
   themeToggle.setAttribute("aria-pressed", String(isDark));
